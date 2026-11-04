@@ -1,8 +1,11 @@
 # SEJK
-Proyecto de Ing. Electrónica.
+Proyecto de Taller de Ing. Electrónica.
 
 Integrantes:
-  Mahia Alejandra Vanegas Parrado 
-  Julián González Cuellar
-  David Santiago Farfán
+
+Mahia Alejandra Vanegas Parrado
+
+Julián González Cuellar
+
+David Santiago Farfán
   
