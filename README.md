@@ -115,7 +115,7 @@ Esta actualización permitirá representar de manera más completa la implementa
 | SEJK_Esquema_Electrico.pdf | Esquema eléctrico del circuito exportado directamente desde KiCad. |
 | SEJK_PCB_2D.png | Representación bidimensional de la PCB, mostrando las pistas, conexiones y distribución de los componentes. |
 | SEJK_PCB_3D.png | Representación tridimensional de la apariencia prevista de la PCB ensamblada. |
-| SEJK_BOM.csv | Lista de materiales necesarios para el ensamblaje de la PCB, incluyendo referencias, cantidades, valores y huellas físicas. |
+| SEJK_BOM.csv | Lista de materiales necesarios para el ensamblaje de la PCB. |
 | README.md | Documento general de presentación y descripción del proyecto. |
 
 ## Lista de materiales de la PCB
