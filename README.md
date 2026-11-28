@@ -109,7 +109,6 @@ Esta actualización permitirá representar de manera más completa la implementa
 | Primera versión de diagrama de cajas negras.jpg | Representación inicial del sistema, considerando una pantalla externa al microcontrolador. |
 | Segunda versión de diagrama de cajas negras | Representación actualizada del sistema con pantalla y ESP32 integrados. |
 | S.E.J.K semana 4.pdf | Bitácora del proceso de diseño, programación, pruebas e implementación electrónica desarrollado durante la cuarta semana. |
-| SEJK_GitHub.zip | Archivos correspondientes al desarrollo del proyecto informático. |
 | SEJK_Configuración Arduino IDE.zip | Código fuente, librerías, archivos de configuración y recursos necesarios para programar la ESP32. |
 | SEJK_KiCad | Carpeta que contiene los archivos originales y editables del proyecto electrónico desarrollado en KiCad. |
 | SEJK_V1.0_Gerber.zip | Archivos Gerber y de taladrado necesarios para la fabricación física de la PCB. |
