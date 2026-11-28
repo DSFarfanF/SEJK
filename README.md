@@ -9,77 +9,144 @@ Julián González Cuellar
 
 David Santiago Farfán
   
-S.E.J.K. – Sistema de Estudio Julick
+# S.E.J.K. — Sistema de Estudio Julick
 
-Descripción del proyecto:
+## Descripción del proyecto
 
-S.E.J.K. (Sistema de Estudio Julick) es un proyecto desarrollado en el marco de la asignatura de Introducción a la Ingeniería Electrónica de la Universidad Nacional de Colombia, sede Bogotá. Su propósito es proporcionar herramientas que contribuyan al fortalecimiento de la memoria, la concentración y los métodos de estudio de los estudiantes universitarios.
+S.E.J.K. (Sistema de Estudio Julick) es un proyecto desarrollado en la Universidad Nacional de Colombia, sede Bogotá, orientado a mejorar los métodos de estudio, la concentración, la memoria y el aprendizaje autónomo de los estudiantes universitarios.
 
-El proyecto se encuentra relacionado con el Objetivo de Desarrollo Sostenible 4 (ODS 4): Educación de calidad, y se compone de dos implementaciones principales:
+El proyecto se encuentra relacionado con el Objetivo de Desarrollo Sostenible 4 (ODS 4): Educación de calidad. Su fundamento teórico se basa en técnicas de aprendizaje y memorización propuestas por Ramón Campayo y Jaime García Serrano.
 
-- Una aplicación móvil con ejercicios interactivos y herramientas de estudio.
-- Un dispositivo electrónico autónomo con pantalla táctil, basado en un microcontrolador ESP32.
+## Implementaciones del proyecto
 
-Ambas implementaciones buscan facilitar el acceso a diferentes técnicas de aprendizaje y promover el estudio autónomo.
+Durante el desarrollo del proyecto se conservaron las dos implementaciones propuestas:
 
-Primera implementación: aplicación móvil
+- **Aplicación informática:** desarrollada mediante MIT App Inventor, incorpora herramientas y ejercicios orientados al fortalecimiento de la memoria, la concentración y los hábitos de estudio.
+- **Dispositivo electrónico con pantalla táctil:** desarrollado mediante una pantalla con microcontrolador ESP32 integrado, programada utilizando Arduino IDE.
 
-La aplicación móvil fue desarrollada mediante MIT App Inventor, una plataforma que permite la creación de aplicaciones mediante programación por bloques. Adicionalmente, se incorporaron recursos desarrollados en HTML para ampliar las funcionalidades y personalizar diferentes apartados del programa.
+Ambas implementaciones cuentan con herramientas educativas complementadas mediante videos explicativos y animaciones disponibles en el canal de YouTube MateJULICK.
 
-La aplicación cuenta con herramientas orientadas al entrenamiento de la memoria, la concentración, la lectura fotográfica, la elaboración de resúmenes y la administración del tiempo mediante la técnica Pomodoro.
+## Implementación electrónica del LED
 
-El proceso de desarrollo se encuentra documentado en los archivos PDF disponibles en este repositorio:
+Como parte del desarrollo electrónico del dispositivo, se planteó la incorporación de un LED externo que complementara el ejercicio de memoria y concentración disponible en la pantalla táctil.
 
-- S.E.J.K. semana 2.pdf: diseño inicial del programa, organización de sus apartados y planteamiento de sus funcionalidades.
-- S.E.J.K. semana 3.pdf y documentos posteriores:** avances relacionados con la programación, implementación y desarrollo de las herramientas propuestas.
+Mediante la modificación del código original de la ESP32, se logró controlar la intensidad luminosa del LED utilizando una señal PWM generada por el GPIO 22.
 
-Segunda implementación: dispositivo electrónico con pantalla táctil
+La intensidad luminosa del LED aumenta y disminuye de manera sincronizada con el tamaño de la esfera presentada durante el ejercicio de concentración.
 
-La segunda implementación consiste en un dispositivo electrónico desarrollado mediante el módulo ESP32-2432S028, el cual integra un microcontrolador ESP32, una pantalla TFT táctil de 2,8 pulgadas con resolución de 240 × 320 píxeles y un controlador táctil XPT2046.
+Las pruebas realizadas mediante una protoboard permitieron comprobar satisfactoriamente el funcionamiento del circuito y su sincronización con la interfaz gráfica.
 
-La programación del dispositivo se realizó en lenguaje C++ mediante Arduino IDE, utilizando las librerías TFT_eSPI y XPT2046_Touchscreen para gestionar la interfaz gráfica y la interacción táctil.
+Asimismo, se conservaron las funcionalidades originales del dispositivo, incorporando el control del LED sin eliminar los ejercicios ni las herramientas previamente desarrolladas.
 
-El dispositivo cuenta con una interfaz propia que permite acceder a diferentes ejercicios de memoria y herramientas de estudio sin depender de una computadora para su ejecución, aunque requiere una fuente de alimentación.
+El dispositivo puede utilizarse tanto con el módulo LED conectado como sin él, sin necesidad de modificar nuevamente su programación.
 
- Implementación electrónica adicional: 
+## Diseño de la PCB
 
-Como complemento del dispositivo, se desarrolló un circuito externo compuesto por un LED y una resistencia de 330 Ω, conectado al GPIO 22 del ESP32.
+Para consolidar la implementación electrónica, se desarrolló una placa de circuito impreso (PCB) mediante KiCad 10.0.8.
 
-Mediante la modulación por ancho de pulso (PWM), se controla progresivamente la intensidad luminosa del LED, sincronizándola con el crecimiento y la disminución de una figura circular presentada en uno de los ejercicios de memoria y concentración.
+La PCB funciona como un módulo de expansión externo conectado a la ESP32 mediante dos conexiones: PWM y GND.
 
-Esta implementación permite complementar el estímulo visual generado por la pantalla mediante un componente electrónico externo.
+El diseño incorpora los siguientes componentes:
 
-El circuito posee un diseño modular, lo que permite utilizar el dispositivo con o sin el LED conectado, sin necesidad de modificar nuevamente su programación.
+- Una resistencia de 330 Ω.
+- Un LED de 5 mm.
+- Un conector de dos pines con separación de 2,54 mm.
 
-## Código fuente y archivos de desarrollo
+El diseño utiliza pistas de cobre en una sola cara, con el objetivo de simplificar el proceso de fabricación y reducir sus costos.
 
-En el archivo comprimido **SEJK_GitHub.zip**, disponible en este repositorio, se encuentran los archivos necesarios para reproducir la programación del prototipo electrónico.
+Se realizaron las comprobaciones de reglas eléctricas (ERC), reglas de diseño (DRC) y correspondencia entre el esquema eléctrico y la PCB, obteniendo resultados sin errores ni advertencias en las comprobaciones ejecutadas.
 
-Su contenido se encuentra organizado de la siguiente manera:
+También se generaron los archivos Gerber y de taladrado necesarios para solicitar la fabricación física de la placa.
 
-| Carpeta | Descripción |
+## Programación y configuración de Arduino IDE
+
+Para la programación de la pantalla táctil y la incorporación del control PWM del LED se utilizó la siguiente configuración:
+
+| Parámetro | Configuración |
 |---|---|
-| SEJK_LED | Código fuente del dispositivo y recursos gráficos. |
-| Configuracion_TFT | Archivos de configuración de la pantalla TFT. |
-| Librerias | Librerías utilizadas durante el desarrollo. |
-| Configuracion_Arduino | Parámetros de configuración y compilación del ESP32. |
-| Firmware | Archivos binarios generados mediante la compilación del programa. |
+| Entorno de desarrollo | Arduino IDE 2.3.11 |
+| Placa | ESP32 Dev Module |
+| ESP32 Core | 3.3.12 |
+| Velocidad de carga | 115200 baudios |
+| Frecuencia de CPU | 240 MHz |
+| Modo de memoria Flash | DIO |
+| Frecuencia de memoria Flash | 40 MHz |
+| Tamaño de memoria Flash | 4 MB |
+| PSRAM | Desactivada |
+| Pin de control del LED | GPIO 22 |
+| Librería gráfica | TFT_eSPI |
+| Librería táctil | XPT2046_Touchscreen |
 
-### Especificaciones técnicas
+Aunque durante el proceso de desarrollo se realizaron pruebas con diferentes velocidades de carga, finalmente se utilizó satisfactoriamente una velocidad de 115200 baudios.
 
-- Microcontrolador: ESP32.
-- Módulo: ESP32-2432S028.
-- Controlador de pantalla configurado: ST7789.
-- Resolución: 240 × 320 píxeles.
-- Controlador táctil: XPT2046.
-- Entorno de desarrollo: Arduino IDE 2.3.11.
-- Paquete ESP32: versión 3.3.12.
-- Lenguaje de programación: C++.
-- Memoria flash: 4 MB.
-- Frecuencia del procesador: 240 MHz.
-- Frecuencia de la memoria flash: 40 MHz.
-- Modo de memoria flash: DIO.
-- Salida PWM para el LED: GPIO 22.
-- Resistencia de protección del LED: 330 Ω.
+Los archivos de programación, las librerías y sus configuraciones se encuentran disponibles en el repositorio para facilitar la reproducción del proyecto.
 
-La publicación de estos archivos busca facilitar la reproducción, modificación y ampliación del proyecto, así como permitir el desarrollo de futuras versiones de S.E.J.K.
+## Diagramas de cajas negras
+
+Durante el desarrollo del proyecto se realizaron diferentes versiones del diagrama de cajas negras, con el propósito de representar la estructura y el funcionamiento general del sistema.
+
+### Primera versión
+
+En la primera versión se planteó una implementación en la cual la pantalla táctil se encontraba como un elemento externo al microcontrolador.
+
+Esta versión corresponde a la propuesta inicial del sistema electrónico.
+
+### Segunda versión
+
+En la segunda versión se modificó la estructura del sistema debido a la selección de una pantalla táctil con microcontrolador ESP32 integrado.
+
+Esta versión representa la arquitectura utilizada actualmente para el funcionamiento de la pantalla táctil.
+
+### Tercera versión
+
+Se plantea desarrollar una tercera versión del diagrama de cajas negras, incorporando la PCB de expansión y el LED controlado mediante PWM.
+
+Esta actualización permitirá representar de manera más completa la implementación electrónica final del dispositivo.
+
+## Contenido del repositorio
+
+| Archivo o carpeta | Descripción |
+|---|---|
+| Proyecto taller de electrónica.pdf | Documento de requerimientos establecidos para el desarrollo del proyecto. |
+| Primera versión de diagrama de cajas negras.jpg | Representación inicial del sistema, considerando una pantalla externa al microcontrolador. |
+| Segunda versión de diagrama de cajas negras | Representación actualizada del sistema con pantalla y ESP32 integrados. |
+| S.E.J.K semana 2.pdf | Documentación y avances correspondientes a la segunda semana del proyecto. |
+| S.E.J.K semana 3.pdf | Documentación y avances correspondientes a la tercera semana del proyecto. |
+| S.E.J.K semana 4.pdf | Bitácora del proceso de diseño, programación, pruebas e implementación electrónica desarrollado durante la cuarta semana. |
+| SEJK_GitHub.zip | Archivos correspondientes al desarrollo del proyecto informático. |
+| SEJK_Configuración Arduino IDE.zip | Código fuente, librerías, archivos de configuración y recursos necesarios para programar la ESP32. |
+| SEJK_KiCad | Carpeta que contiene los archivos originales y editables del proyecto electrónico desarrollado en KiCad. |
+| SEJK_V1.0_Gerber.zip | Archivos Gerber y de taladrado necesarios para la fabricación física de la PCB. |
+| SEJK_Esquema_Electrico.pdf | Esquema eléctrico del circuito exportado directamente desde KiCad. |
+| SEJK_PCB_2D.png | Representación bidimensional de la PCB, mostrando las pistas, conexiones y distribución de los componentes. |
+| SEJK_PCB_3D.png | Representación tridimensional de la apariencia prevista de la PCB ensamblada. |
+| SEJK_BOM.csv | Lista de materiales necesarios para el ensamblaje de la PCB, incluyendo referencias, cantidades, valores y huellas físicas. |
+| README.md | Documento general de presentación y descripción del proyecto. |
+
+## Lista de materiales de la PCB
+
+| Referencia | Componente | Especificación | Cantidad |
+|---|---|---|---|
+| R1 | Resistencia | 330 Ω | 1 |
+| D1 | LED | 5 mm | 1 |
+| J1 | Conector macho | 1×2 pines, separación de 2,54 mm | 1 |
+
+Actualmente se dispone de la resistencia y el LED utilizados durante las pruebas experimentales. La adquisición del conector se encuentra pendiente.
+
+## Conclusiones
+
+El desarrollo de S.E.J.K. permitió integrar herramientas informáticas y electrónicas orientadas al fortalecimiento de los métodos de estudio.
+
+Se logró conservar el funcionamiento de las dos implementaciones originales e incorporar una nueva funcionalidad electrónica mediante el control de la intensidad luminosa de un LED, sincronizado con uno de los ejercicios de concentración.
+
+El diseño de la PCB representa un avance hacia la consolidación física del dispositivo, permitiendo sustituir las conexiones experimentales realizadas mediante protoboard por una implementación más compacta y organizada.
+
+Los archivos disponibles en este repositorio permiten consultar, estudiar, reproducir y continuar desarrollando el proyecto S.E.J.K.
+
+---
+
+**S.E.J.K. V1.0 — Sistema de Estudio Julick**
+
+Universidad Nacional de Colombia — Sede Bogotá
+
+Ingeniería Electrónica — 2026
