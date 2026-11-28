@@ -126,7 +126,7 @@ Esta actualización permitirá representar de manera más completa la implementa
 | D1 | LED | 5 mm | 1 |
 | J1 | Conector macho | 1×2 pines, separación de 2,54 mm | 1 |
 
-Actualmente se dispone de la resistencia y el LED utilizados durante las pruebas experimentales. La adquisición del conector se encuentra pendiente.
+Actualmente se dispone de la resistencia y el LED utilizados durante las pruebas experimentales.
 
 ## Conclusiones
 
