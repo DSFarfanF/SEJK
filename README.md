@@ -126,8 +126,6 @@ Esta actualización permitirá representar de manera más completa la implementa
 | D1 | LED | 5 mm | 1 |
 | J1 | Conector macho | 1×2 pines, separación de 2,54 mm | 1 |
 
-Actualmente se dispone de la resistencia y el LED utilizados durante las pruebas experimentales.
-
 ## Conclusiones
 
 El desarrollo de S.E.J.K. permitió integrar herramientas informáticas y electrónicas orientadas al fortalecimiento de los métodos de estudio.
