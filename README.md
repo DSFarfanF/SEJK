@@ -7,8 +7,6 @@ Mahia Alejandra Vanegas Parrado
 
 Julián González Cuellar
 
-David Santiago Farfán
-  
 # S.E.J.K. — Sistema de Estudio Julick
 
 ## Descripción del proyecto
